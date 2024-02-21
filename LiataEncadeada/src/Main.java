@@ -1,5 +1,4 @@
-
-public class ListaTeste {
+public class Main {
     public static void main(String[] args){
         Lista<Integer> lista = new Lista<>();
         lista.adiciona(1);

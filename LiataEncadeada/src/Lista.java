@@ -10,6 +10,7 @@ public class Lista<T> {
         }
         else {
             this.ultimo.setProximo(caixa);
+            this.ultimo.setAnterior(caixa);
         }
         this.ultimo=caixa;
         this.tamanho++;
@@ -34,25 +35,25 @@ public class Lista<T> {
 
     @Override
     public String toString() {
-      if(this.tamanho == 0){
+        if(this.tamanho == 0){
             return "[]";
-      }
-      else{
-          StringBuilder builder = new StringBuilder("[");
-          No<T> atual = this.inicio;
-          for (int i = 0; i < this.tamanho - 1 ; i++) {
-              builder.append(atual.getElemento()).append(",");
-              atual = atual.getProximo();
-          }
-          builder.append(atual.getElemento()).append("]");
+        }
+        else{
+            StringBuilder builder = new StringBuilder("[");
+            No<T> atual = this.inicio;
+            for (int i = 0; i < this.tamanho - 1 ; i++) {
+                builder.append(atual.getElemento()).append(",");
+                atual = atual.getProximo();
+            }
+            builder.append(atual.getElemento()).append("]");
 
           /*builder.append(atual.getElemento()).append(",");
           while (atual.getProximo() != null){
               atual = atual.getProximo();
               builder.append(atual.getElemento()).append(",");
           }*/
-          return builder.toString();
-      }
+            return builder.toString();
+        }
 
 
 

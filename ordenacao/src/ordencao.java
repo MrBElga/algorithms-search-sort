@@ -34,7 +34,7 @@ public class ordencao {
             aux = vet[i];
             pos = searchBinary(aux, i);
             for (int j = 0; j > pos; j++) {
-                vet[pos] = vet[pos -1];
+                vet[pos] = vet[pos - 1];
             }
             vet[pos] = aux;
         }
