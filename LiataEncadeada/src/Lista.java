@@ -7,12 +7,13 @@ public class Lista<T> {
 
         if(tamanho == 0){
             this.inicio=caixa;
+            this.ultimo=caixa;
         }
         else {
+            caixa.setAnterior(this.ultimo);
             this.ultimo.setProximo(caixa);
-            this.ultimo.setAnterior(caixa);
+            this.ultimo = caixa;
         }
-        this.ultimo=caixa;
         this.tamanho++;
     }
     public int getTamanho(){
@@ -32,7 +33,16 @@ public class Lista<T> {
         this.ultimo = null;
         this.tamanho = 0;
     }
-
+    public No<T> busca(T elemento) {
+        No<T> atual = this.inicio;
+        while (atual != null) {
+            if (atual.getElemento().equals(elemento)) {
+                return atual; // Elemento encontrado
+            }
+            atual = atual.getProximo();
+        }
+        return null; // Elemento não encontrado
+    }
     @Override
     public String toString() {
         if(this.tamanho == 0){

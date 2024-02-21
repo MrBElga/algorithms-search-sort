@@ -9,6 +9,15 @@ public class Main {
         System.out.println("tamanho: " + lista.getTamanho());
         System.out.println(lista);
 
+        int elementoBuscado = 3;
+        No<Integer> noEncontrado = lista.busca(elementoBuscado);
+
+        if (noEncontrado != null) {
+            System.out.println("Elemento " + elementoBuscado + " encontrado na lista.");
+        } else {
+            System.out.println("Elemento " + elementoBuscado + " não encontrado na lista.");
+        }
+
         lista.limpar();
         System.out.println("tamanho: " + lista.getTamanho());
         System.out.println(lista);
