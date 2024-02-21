@@ -26,6 +26,7 @@ public class Lista<T> {
             No<T> proximo = atual.getProximo();
             atual.setElemento(null);
             atual.setProximo(null);
+            atual.setAnterior(null);
             this.tamanho--;
             atual = proximo;
         }
