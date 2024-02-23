@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LiataEncadeada.iml" filepath="$PROJECT_DIR$/LiataEncadeada.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ListaEncadeada.iml" filepath="$PROJECT_DIR$/ListaEncadeada.iml" />
     </modules>
   </component>
 </project>
