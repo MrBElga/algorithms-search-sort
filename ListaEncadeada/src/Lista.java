@@ -23,7 +23,7 @@ public class Lista {
     }
 
     public void inserirFim(int info){
-        No nova = new No(null,fim,info);
+        No nova = new No(fim,null,info);
         if(inicio == null){
             inicio = fim = nova;
         }
@@ -46,13 +46,16 @@ public class Lista {
         }
     }
     public void exibir(){
+        No i;
         if(inicio == null)
             System.out.println("[]");
         else{
-
-            for(No i = inicio ; i != null ; i = i.getProx()){
-                System.out.println(i.getInfo() + " ");
+            System.out.print("[");
+            for(i = inicio ; i.getProx() != null ; i = i.getProx()){
+                System.out.print(i.getInfo() + ",");
             }
+            System.out.print(i.getInfo());
+            System.out.println("]");
         }
     }
 
@@ -67,9 +70,11 @@ public class Lista {
         No ppos = inicio;
         ppos = buscaExaustiva(info);
         if(ppos == inicio){
-            ppos.getProx().setAnt(null);
+           inicio = ppos.getProx();
+           ppos.getProx().setAnt(null);
         }
         else if(ppos == fim){
+            fim = ppos.getAnt();
             ppos.getAnt().setProx(null);
         }
         else{

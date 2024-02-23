@@ -8,10 +8,20 @@ public class Main {
         Lista lista = new Lista();
         Random rand = new Random();
 
-        for (int i = 0; i < 10; i++) {
-            lista.inserirInicio(rand.nextInt(26));
+        for (int i = 0; i <= 10; i++) {
+            lista.inserirFim(i);
         }
         lista.exibir();
 
+        lista.remover(5);
+        lista.exibir();
+        lista.remover(10);
+        lista.exibir();
+        lista.remover(9);
+        lista.exibir();
+        lista.remover(0);
+        lista.exibir();
+        lista.remover(1);
+        lista.exibir();
     }
 }
