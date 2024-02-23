@@ -6,7 +6,6 @@ public class Lista {
         this.inicio = inicio;
         this.fim = fim;
     }
-
     public void inicializa(){
       inicio = null;
       fim = null;
@@ -21,7 +20,6 @@ public class Lista {
             inicio = nova;
         }
     }
-
     public void inserirFim(int info){
         No nova = new No(fim,null,info);
         if(inicio == null){
@@ -58,7 +56,6 @@ public class Lista {
             System.out.println("]");
         }
     }
-
     public No buscaExaustiva(int chave){
         No ppos = inicio;
         while(ppos != null && chave != ppos.getInfo() ){
@@ -67,19 +64,22 @@ public class Lista {
         return ppos;
     }
     public void remover(int info){
-        No ppos = inicio;
+        No ppos = inicio.getProx();
         ppos = buscaExaustiva(info);
-        if(ppos == inicio){
-           inicio = ppos.getProx();
-           ppos.getProx().setAnt(null);
-        }
-        else if(ppos == fim){
+        if (ppos == inicio) {
+            inicio = ppos.getProx();
+        } else if (ppos == fim) {
             fim = ppos.getAnt();
-            ppos.getAnt().setProx(null);
+        } else {
+            if (ppos.getAnt() != null) {
+                ppos.getAnt().setProx(ppos.getProx());
+            }
+            if (ppos.getProx() != null) {
+                ppos.getProx().setAnt(ppos.getAnt());
+            }
         }
-        else{
-            ppos.getAnt().setProx(ppos.getProx());
-            ppos.getProx().setAnt(ppos.getAnt());
-        }
+
+        ppos.setAnt(null);
+        ppos.setProx(null);
     }
 }
