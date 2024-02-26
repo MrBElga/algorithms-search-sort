@@ -52,8 +52,8 @@ public class Lista {
             for(i = inicio ; i.getProx() != null ; i = i.getProx()){
                 System.out.print(i.getInfo() + ",");
             }
-            System.out.print(i.getInfo());
-            System.out.println("]");
+            System.out.print(i.getInfo()+"]");
+            //System.out.println("]");
         }
     }
     public No buscaExaustiva(int chave){
