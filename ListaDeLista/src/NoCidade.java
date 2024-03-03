@@ -7,6 +7,9 @@ public class NoCidade {
         this.info = info;
     }
 
+    public NoCidade() {
+    }
+
     public NoCidade getProximo() {
         return proximo;
     }

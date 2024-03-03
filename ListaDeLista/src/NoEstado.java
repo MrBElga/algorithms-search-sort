@@ -1,12 +1,12 @@
 public class NoEstado {
     private NoEstado proximo;
-    private NoCidade listaCidades;
+    private ListaCidade listaCidade;
     private String info;
 
     public NoEstado(NoEstado proximo, String info) {
         this.proximo = proximo;
         this.info = info;
-        this.listaCidades = null;
+        this.listaCidade = new ListaCidade();
     }
 
     public NoEstado getProximo() {
@@ -17,12 +17,12 @@ public class NoEstado {
         this.proximo = proximo;
     }
 
-    public NoCidade getListaCidades() {
-        return listaCidades;
+    public ListaCidade getListaCidades() {
+        return listaCidade;
     }
 
-    public void setListaCidades(NoCidade listaCidades) {
-        this.listaCidades = listaCidades;
+    public void setListaCidades(ListaCidade listaCidade) {
+        this.listaCidade = listaCidade;
     }
 
     public String getInfo() {

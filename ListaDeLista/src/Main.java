@@ -1,56 +1,37 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+
 public class Main {
     public static void main(String[] args) {
-        Lista listaEstados = new Lista();
-        NoEstado inserido;
-        NoCidade inseridoC;
+        ListaEstado listaEstado = new ListaEstado();
+        NoCidade l = new NoCidade();
+        listaEstado.inserirEstado("São Paulo");
+        listaEstado.inserirEstado("Rio de Janeiro");
+        listaEstado.inserirEstado("Minas Gerais");
+        listaEstado.inserirCidade("Campinas", "São Paulo");
+        listaEstado.inserirCidade("Santos", "São Paulo");
+        listaEstado.inserirCidade("Niterói", "Rio de Janeiro");
+        listaEstado.inserirCidade("Belo Horizonte", "Minas Gerais");
+        listaEstado.inserirCidade("Uberlândia", "Minas Gerais");
 
-        listaEstados.inserirEstado("São Paulo");
-        listaEstados.inserirEstado("Rio de Janeiro");
-        listaEstados.inserirEstado("Minas Gerais");
-        listaEstados.inserirEstado("Santa Catarina");
-        listaEstados.inserirEstado("Paraná");
+        System.out.println("Estados e suas cidades (antes da ordenação):");
+        listaEstado.exibirTodasCidades();
+        System.out.println();
 
-        listaEstados.inserirCidade("São Paulo", "São Paulo");
-        listaEstados.inserirCidade("Assis", "São Paulo");
-        listaEstados.inserirCidade("Marilia", "São Paulo");
-        listaEstados.inserirCidade("Presidente Prudente", "São Paulo");
-        listaEstados.inserirCidade("Rio de Janeiro", "Rio de Janeiro");
-        listaEstados.inserirCidade("Belo Horizonte", "Minas Gerais");
-        listaEstados.inserirCidade("Apucarana", "Paraná");
-        listaEstados.inserirCidade("Arapongas", "Paraná");
-        listaEstados.inserirCidade("Maringá", "Paraná");
-        listaEstados.inserirCidade("Londrina", "Paraná");
-        listaEstados.inserirCidade("Blumenau", "Santa Catarina");
-        listaEstados.inserirCidade("Joinville", "Santa Catarina");
+        listaEstado.ordenarEstados();
+        listaEstado.OrdenarTodasCidades();
+        System.out.println("Estados e suas cidades (após a ordenação):");
+        listaEstado.exibirTodasCidades();
 
-        System.out.println("\n----------------ESTADOS---------------\n");
-        System.out.println("numero de Estados: "+listaEstados.contaEstados());
-        listaEstados.exibirEstados();
-        System.out.println("\n----------------CIDADES---------------\n");
-        System.out.println("numero de cidades: "+listaEstados.contaCidads());
-        listaEstados.exibirTodasCidades();
-        System.out.println("\n----------------CIDADES SÃO PAULO---------------\n");
-        NoEstado aux = listaEstados.buscarEstado("São Paulo");
-        listaEstados.exibirCidades(aux.getListaCidades());
-        System.out.println("\n----------------ORDENANDO ESTADOS---------------\n");
-        listaEstados.OrdenarEstado();
-        listaEstados.exibirEstados();
-
-        System.out.println("\n----------------ORDENANDO CIDADES---------------\n");
-        listaEstados.OrdenarTodasCidades();
-        listaEstados.exibirTodasCidades();
-
-        System.out.println("\n----------------BUSCAS---------------\n");
-        inserido = listaEstados.buscarEstado("São Paulo");
-        if(inserido!=null)
-            System.out.println("estado encontrada");
-        else
-            System.out.println("estado não encotrada");
-
-        inseridoC = listaEstados.buscarCidade("Presidente Prudente", "São Paulo");
-        if(inseridoC!=null)
+        System.out.println("buscando cidades");
+        l = listaEstado.buscarCidade("São Paulo","Campinas");
+        if (l!=null){
             System.out.println("cidade encontrada");
-        else
-            System.out.println("Cidade não encontrada");
+        }
+        else{
+            System.out.println("cidade não encontrada");
+        }
     }
 }
