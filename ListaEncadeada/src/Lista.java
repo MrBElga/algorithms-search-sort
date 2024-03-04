@@ -11,7 +11,7 @@ public class Lista {
       fim = null;
     }
     public void inserirInicio(int info){
-        No nova = new No(null,inicio,info);
+        No nova = new No(null,null,info);
         if(inicio == null){
             inicio = fim = nova;
         }
@@ -21,12 +21,13 @@ public class Lista {
         }
     }
     public void inserirFim(int info){
-        No nova = new No(fim,null,info);
+        No nova = new No(null,null,info);
         if(inicio == null){
             inicio = fim = nova;
         }
         else{
             fim.setProx(nova);
+            nova.setAnt(fim);
             fim = nova;
         }
     }
@@ -36,7 +37,7 @@ public class Lista {
         for (pi = inicio.getProx() ; pi != null ;pi = pi.getProx()) {
             aux = pi.getInfo();
             ppos = pi;
-            while(ppos != inicio && aux<ppos.getProx().getInfo()){
+            while(ppos != inicio && aux<ppos.getAnt().getInfo()){
                 ppos.setInfo(ppos.getAnt().getInfo());
                 ppos = ppos.getAnt();
             }
