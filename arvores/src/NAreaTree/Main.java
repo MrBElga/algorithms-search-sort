@@ -12,6 +12,7 @@ public class Main {
         novo.inserir(99);
         novo.inserir(98);
         novo.inserir(95);
+        novo.inserir(101);
         novo.inOrd(novo.getRaiz());
 
     }
