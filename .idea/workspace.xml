@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3434d4a3-cf2c-4ec3-9aed-82ea4279fb3c" name="Changes" comment="" />
+    <list default="true" id="3434d4a3-cf2c-4ec3-9aed-82ea4279fb3c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/discord.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arvores/src/BTree/BTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/arvores/src/BTree/BTree.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,21 +40,25 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "dev",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Admin/Desktop/algorithms-search-sort",
+    "last_opened_file_path": "/home/kali/Área de trabalho/algorithms-search-sort/arvores",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-18.0.2-corretto-18.0.2-3183f394aec4-38982a12" />
+        <option value="jdk-18.0.2-azul-18.0.2.1-4caba194b151-a8eb7664" />
+        <option value="jdk-20.0.2-azul-20.0.2-4caba194b151-ffffd64d" />
       </set>
     </attachedChunks>
   </component>
@@ -67,6 +75,7 @@
       <workItem from="1709138784277" duration="630000" />
       <workItem from="1709401420954" duration="27000" />
       <workItem from="1713303072669" duration="82000" />
+      <workItem from="1713368549599" duration="1399000" />
     </task>
     <servers />
   </component>
