@@ -44,7 +44,10 @@ public class Narea {
         }
     }
 
-    public void inOrd(No raiz){
+    public void inOrd(){
+        inOrd(raiz);
+    }
+    private void inOrd(No raiz){
         if(raiz != null){
             for(int i = 0;i<raiz.getTL();i++){
                 inOrd(raiz.getvLig(i));
