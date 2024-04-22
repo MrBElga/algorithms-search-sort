@@ -14,7 +14,14 @@ public class No {
         TL = 0;
     }
 
-    public int procurarPosicao(int info){
+    public No(int info,int posArq){
+        this();
+        vInfo[0] = info;
+        vPos[0] = posArq;
+        TL = 1;
+    }
+
+    public int buscarPos(int info){
         int pos = 0;
         while(pos < TL && info > vInfo[pos])
             pos++;
