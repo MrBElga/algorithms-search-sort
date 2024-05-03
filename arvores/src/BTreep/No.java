@@ -1,7 +1,8 @@
 package BTreep;
 
 public class No {
-    private final int M=2;
+    public static final int M = 2;
+
     private int[] vInfo;
     private  int[] vPos;
     private No[] vLig;
@@ -35,6 +36,10 @@ public class No {
             vPos[i] = vPos[i-1];
             vLig[i] = vLig[i-1];
         }
+    }
+
+    public void remanejarExclusao(int pos){
+
     }
 
     public int getvInfo(int P) {

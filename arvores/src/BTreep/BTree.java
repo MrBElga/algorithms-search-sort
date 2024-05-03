@@ -97,6 +97,93 @@ public class BTree {
         }
     }
 
+    private No localizarNo(int info){
+        return null;
+    }
+
+    private No localizaSubE(No no,int pos){
+        no = no.getvLig(pos);
+        while (no.getvLig(0) != null)
+            no = no.getvLig(no.getTL());
+        return  no;
+    }
+
+    private No localizaSubD(No no,int pos){
+        no = no.getvLig(pos);
+        while (no.getvLig(0) != null)
+            no = no.getvLig(0);
+        return  no;
+    }
+
+
+    public void excluir(int info){
+        No no = localizarNo(info), subE, subD, folha;
+        int pos;
+        if(no!=null){
+            pos = no.buscarPos(info);
+            //se no não eh folha
+            if(no.getvLig(0) != null){
+                subE = localizaSubE(no,pos);
+                subD = localizaSubD(no,pos+1);
+                if(subE.getTL() > No.M || subD.getTL() == No.M){
+                    no.setvInfo(pos, subE.getvInfo(subE.getTL()-1));
+                    no.setvPos(pos, subE.getvInfo(subE.getTL()-1));
+                    folha = subE;
+                    pos = subE.getTL()-1;
+                }
+                else{
+                    no.setvInfo(pos, subD.getvInfo(0));
+                    no.setvPos(pos, subD.getvInfo(0));
+                    folha = subD;
+                    pos = 0;
+                }
+            }
+            else{
+                folha = no;
+            }
+            //exclusão na folha
+            folha.remanejarExclusao(pos);
+            folha.setTL(no.getTL()-1);
+
+            if(folha == raiz && folha.getTL() ==0){
+                raiz = null;
+            }
+            else if(folha!= raiz && folha.getTL() < No.M){
+                redistribuirConcatenar(folha);
+            }
+
+        }
+    }
+
+    private void redistribuirConcatenar(No folha) {
+        No pai = buscaPai(folha, folha.getvInfo(0));
+        int posPai = pai.buscarPos(folha.getvInfo(0));
+        No irmaE = null,irmaD=null;
+        if(posPai - 1 >= 0){
+            irmaE = pai.getvLig(posPai-1);
+        }
+        if(posPai+1 <= pai.getTL()){
+            irmaD = pai.getvLig(posPai+1);
+        }
+
+        if(irmaE != null && irmaE.getTL() > No.M){
+          folha.remanejar(0);
+          folha.setvInfo(0,pai.getvInfo(posPai-1));
+          folha.setvPos(0,pai.getvPos(posPai-1));
+          folha.setTL(folha.getTL()+1);
+          pai.setvInfo(posPai-1,irmaE.getvInfo(irmaE.getTL()-1));
+          pai.setvPos(posPai-1,irmaE.getvPos(irmaE.getTL()-1));
+          folha.setvLig(0,irmaE.getvLig(irmaE.getTL()));
+          irmaE.setTL(irmaE.getTL()-1);
+
+
+        } else if (irmaD != null && irmaD.getTL() > No.M) {//redistribuicao com a irma da direita
+
+        } else{//concatenacao
+
+        }
+    }
+
     public void inOrd(){
         inOrd(raiz);
     }
