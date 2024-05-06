@@ -178,8 +178,42 @@ public class BTree {
 
 
         } else if (irmaD != null && irmaD.getTL() > No.M) {//redistribuicao com a irma da direita
-
+            folha.setvInfo(folha.getTL(), pai.getvInfo(posPai));
+            folha.setvPos(folha.getTL(), pai.getvPos(posPai));
+            folha.setTL(folha.getTL()+1);
+            pai.setvInfo(posPai, irmaD.getvInfo(0));
+            pai.setvPos(posPai, irmaD.getvPos(0));
+            folha.setvLig(folha.getTL(), irmaD.getvLig(0));
+            irmaD.remanejarExclusao(0);
+            irmaD.setTL(irmaD.getTL()-1);
         } else{//concatenacao
+            if(irmaE != null){
+                irmaE.setvInfo(irmaE.getTL(), pai.getvInfo(posPai - 1));
+                irmaE.setvPos(irmaE.getTL(), pai.getvPos(posPai-1));
+                irmaE.setTL(irmaE.getTL()+1);
+                pai.remanejarExclusao(posPai-1);
+                pai.setTL(pai.getTL()-1);
+                pai.setvLig(posPai-1, irmaE);
+                for (int i = 0; i < folha.getTL() ; i++) {
+                    irmaE.setvInfo(irmaE.getTL(), folha.getvInfo(i));
+                    irmaE.setvPos(irmaE.getTL(), folha.getvPos(i));
+                    irmaE.setvLig(irmaE.getTL(), folha.getvLig(i));
+                    irmaE.setTL(irmaE.getTL()+1);
+                }
+                irmaE.setvLig(irmaE.getTL(),folha.getvLig(folha.getTL()));
+            }
+            else{
+
+            }
+            folha = pai;
+            if(pai == raiz && pai.getTL() == 0){
+                if(irmaE != null)
+                    raiz = irmaE;
+                else
+                    raiz = irmaD;
+            }
+            else if(folha.getTL()<M)
+                    redistribuirConcatenar(folha);
 
         }
     }
