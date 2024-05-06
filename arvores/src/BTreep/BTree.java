@@ -98,7 +98,19 @@ public class BTree {
     }
 
     private No localizarNo(int info){
-        return null;
+         No aux = raiz;
+         int pos;
+         boolean flag = false;
+         while (aux != null && !flag){
+             pos = aux.buscarPos(info);
+             if(aux.getvInfo(pos) == info){
+                 flag = true;
+             }
+             else{
+                 aux = aux.getvLig(pos);
+             }
+         }
+         return aux;
     }
 
     private No localizaSubE(No no,int pos){
