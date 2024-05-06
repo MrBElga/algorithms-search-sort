@@ -188,7 +188,6 @@ public class BTree {
           folha.setvLig(0,irmaE.getvLig(irmaE.getTL()));
           irmaE.setTL(irmaE.getTL()-1);
 
-
         } else if (irmaD != null && irmaD.getTL() > No.M) {//redistribuicao com a irma da direita
             folha.setvInfo(folha.getTL(), pai.getvInfo(posPai));
             folha.setvPos(folha.getTL(), pai.getvPos(posPai));
@@ -217,6 +216,7 @@ public class BTree {
             else{
 
             }
+
             folha = pai;
             if(pai == raiz && pai.getTL() == 0){
                 if(irmaE != null)
@@ -224,7 +224,7 @@ public class BTree {
                 else
                     raiz = irmaD;
             }
-            else if(folha.getTL()<M)
+            else if(raiz!=pai && folha.getTL()<M)
                     redistribuirConcatenar(folha);
 
         }
