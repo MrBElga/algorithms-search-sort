@@ -24,7 +24,8 @@ public class No {
 
     public int buscarPos(int info) {
         int pos = 0;
-        while (pos < TL && info > vInfo[pos]) pos++;
+        while(pos<TL && info>vInfo[pos])
+            pos++;
         return pos;
     }
 
