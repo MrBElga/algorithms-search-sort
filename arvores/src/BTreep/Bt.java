@@ -9,22 +9,23 @@ public class Bt {
         BTree arvore = new BTree();
         for (int i = 0; i < 10; i++) {
             arvore.inserir(i, i);
+            System.out.println("Inseriu o valor: " + i);
+            System.out.println("Arvore:");
+            arvore.printBTree(arvore);
+            sleep(500);
         }
         System.out.println("inseriu");
-        System.out.println("ARVORE:");
-        arvore.printArvore();
         System.out.println("INORD:");
         arvore.inOrd();
-
-        for (int i = 0; i < 5; i++) {
-            Random rand = new Random();
-            int valorAleatorio = rand.nextInt(10);
-            arvore.excluir(valorAleatorio);
-            System.out.println("Excluiu o valor: " + valorAleatorio);
-            System.out.println("ARVORE:");
-            arvore.printArvore();
+        System.out.println("Arvore:");
+        arvore.printBTree(arvore);
+        for (int i = 0; i < 10; i++) {
+            arvore.excluir(i);
+            System.out.println("Excluiu o valor: " + i);
             System.out.println("INORD:");
             arvore.inOrd();
+            System.out.println("Arvore:");
+            arvore.printBTree(arvore);
             sleep(500);
         }
 
