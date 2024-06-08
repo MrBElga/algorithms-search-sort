@@ -1,4 +1,4 @@
-package BTreep;
+package B;
 
 public class No {
     public static final int M = 2;

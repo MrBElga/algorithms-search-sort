@@ -1,4 +1,4 @@
-package BTreep;
+package B;
 
 import java.util.Random;
 

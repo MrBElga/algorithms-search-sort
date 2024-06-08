@@ -133,12 +133,12 @@ Patricia {
             aux = f.remove();
             for (int i = 0; i < 26; i++) {
                 if (aux.getvLig(i) != null) {
-                    if (!Objects.equals(aux.getvLig(i).getPalavra(), ""))//if para evitar imprimir os vazios tambem
-                        System.out.println("Palavra : " + aux.getvLig(i).getPalavra() + " nivel : " + nivel);
+                    System.out.printf(aux.getLetras(i) +" ");
                     f.insere(aux.getvLig(i), nivel, "");
                 }
-
             }
+            System.out.printf("Palavra : " + aux.getPalavra() + " pos letra : " + aux.posLetra);
+            System.out.printf("\n");
         }
     }
 

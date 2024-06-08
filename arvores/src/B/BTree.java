@@ -1,4 +1,4 @@
-package BTreep;
+package B;
 
 public class BTree {
     private final int M = 2;
