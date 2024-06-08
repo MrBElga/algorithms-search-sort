@@ -1,6 +1,6 @@
 package estruturas;
 
-import Patricia.No;
+import Patricia.Patricia.No;
 
 public class Tipo {
     No valor;

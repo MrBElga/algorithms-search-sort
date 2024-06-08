@@ -1,4 +1,4 @@
-package Patricia;
+package Patricia.Patricia;
 
 public class Aplicacao {
     public static void main(String[] args) {

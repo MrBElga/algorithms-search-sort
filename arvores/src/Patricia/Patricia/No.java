@@ -1,4 +1,4 @@
-package Patricia;
+package Patricia.Patricia;
 
 import java.util.Objects;
 
