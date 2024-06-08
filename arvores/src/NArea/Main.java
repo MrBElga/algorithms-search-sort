@@ -1,4 +1,4 @@
-package NAreaTree;
+package NArea;
 
 public class Main {
     public static int N = 2;

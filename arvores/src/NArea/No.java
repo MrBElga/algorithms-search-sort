@@ -1,4 +1,4 @@
-package NAreaTree;
+package NArea;
 
 public class No {
     private int[] vInfo;

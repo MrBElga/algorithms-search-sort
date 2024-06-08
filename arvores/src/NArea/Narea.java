@@ -1,4 +1,4 @@
-package NAreaTree;
+package NArea;
 
 public class Narea {
     private No raiz;

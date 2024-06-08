@@ -1,4 +1,4 @@
-package BPlusTree;
+package Bplus;
 
 public class No{
     public static final int M = 5 ;//4 ;

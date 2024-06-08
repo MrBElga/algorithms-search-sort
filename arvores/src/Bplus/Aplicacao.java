@@ -1,5 +1,4 @@
-package BPlusTree;
-
+package Bplus;
 
 
 public class Aplicacao

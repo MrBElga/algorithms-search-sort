@@ -1,4 +1,4 @@
-package BPlusTree;
+package Bplus;
 
 public class BPlus {
     private No raiz;
