@@ -1,6 +1,6 @@
 package Patricia.Patricia;
 
-import estruturas.Fila;
+import Patricia.estruturas.Fila;
 
 import java.util.Objects;
 

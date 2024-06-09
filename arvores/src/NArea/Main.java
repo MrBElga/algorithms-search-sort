@@ -1,7 +1,7 @@
 package NArea;
 
 public class Main {
-    public static int N = 2;
+
     public static void main(String[] args) {
         Narea novo;
         novo = new Narea();

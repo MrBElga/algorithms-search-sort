@@ -1,6 +1,7 @@
 package NArea;
 
 public class No {
+    public static int N = 2;
     private int[] vInfo;
     private No[]vLig;
     private int TL;
@@ -9,8 +10,8 @@ public class No {
     }
 
     public No(int info) {
-        this.vInfo = new int [Main.N-1];
-        this.vLig = new No[Main.N];
+        this.vInfo = new int [N-1];
+        this.vLig = new No[N];
         this.vInfo[0] = info;
         this.TL = 1;
     }

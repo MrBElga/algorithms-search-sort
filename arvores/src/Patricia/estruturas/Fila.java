@@ -1,4 +1,4 @@
-package estruturas;
+package Patricia.estruturas;
 
 import Patricia.Patricia.No;
 

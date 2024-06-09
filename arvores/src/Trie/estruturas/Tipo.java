@@ -1,14 +1,14 @@
-package Patricia.estruturas;
+package Trie.estruturas;
 
-import Patricia.Patricia.No;
+import Trie.arvore.No;
 
 public class Tipo {
-    No valor;
-    Tipo prox;
-    int nivel;
-    String palavra;
+    private No valor;
+    private Tipo prox;
+    private int nivel;
+    private char palavra;
 
-    public Tipo(No valor, Tipo prox, int nivel, String palavra) {
+    public Tipo(No valor, Tipo prox, int nivel, char palavra) {
         this.valor = valor;
         this.prox = prox;
         this.nivel = nivel;
@@ -33,5 +33,13 @@ public class Tipo {
 
     public void setProx(Tipo prox) {
         this.prox = prox;
+    }
+
+    public char getPalavra() {
+        return palavra;
+    }
+
+    public void setPalavra(char palavra) {
+        this.palavra = palavra;
     }
 }
